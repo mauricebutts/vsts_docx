@@ -1,2 +1,5 @@
-import vsts_datapack.DatapackDocx.DatapackDocx
-import vsts_datapack.DatapackVsts.DatapackVsts
+from vsts_datapack.DatapackDocx.DatapackDocx import _create_docx_table_from_query
+from vsts_datapack.DatapackDocx.DatapackDocx import _add_datapack_hyperlink
+from vsts_datapack.DatapackVsts.DatapackVsts import _datapack_query
+from vsts_datapack.DatapackVsts.DatapackVsts import _datapack_item_count_query
+
