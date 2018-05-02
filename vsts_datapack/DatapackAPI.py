@@ -2,8 +2,8 @@
 Desc: This file acts as the API to the Datapack package. Use this to interface with the custom built commands.
 """
 
-import DatapackDocx.DatapackDocx as dd
-import DatapackVsts.DatapackVsts as dv
+import vsts_datapack.DatapackDocx.DatapackDocx as dd
+import vsts_datapack.DatapackVsts.DatapackVsts as dv
 
 
 def datapack_vsts_query(token, team_instance, query_id):
