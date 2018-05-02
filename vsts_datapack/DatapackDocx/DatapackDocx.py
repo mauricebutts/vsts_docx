@@ -1,4 +1,4 @@
-from DatapackVsts import DatapackVsts as av
+from vsts_datapack.DatapackVsts import DatapackVsts as av
 from docx.enum.dml import MSO_THEME_COLOR_INDEX
 import docx
 

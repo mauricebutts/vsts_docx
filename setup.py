@@ -7,5 +7,5 @@ setup(name='vsts_datapack',
       author='Maurice Butts',
       author_email='mzacharybutts@gmail.com',
       license='',
-      packages=['vsts_datapack'],
+      packages=['vsts_datapack', 'vsts_datapack/DatapackDocx/','vsts_datapack/DatapackVsts/', ],
       zip_safe=False)
