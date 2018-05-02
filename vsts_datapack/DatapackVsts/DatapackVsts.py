@@ -3,7 +3,7 @@ from msrest.authentication import BasicAuthentication
 import pprint
 
 
-def datapack_query(token, team_instance, query_id):
+def _datapack_query(token, team_instance, query_id):
 
     credentials = BasicAuthentication('', token)
     connection = VssConnection(base_url=team_instance, creds=credentials)
@@ -66,7 +66,7 @@ def datapack_query(token, team_instance, query_id):
     return work_item_ids, returned_titles, returned_priority, returned_state, returned_tag
 
 
-def datapack_item_count_query(token, team_instance, query_id, project):
+def _datapack_item_count_query(token, team_instance, query_id, project):
     """ This func grabs the number of items and url of the query_id passed to it.
 
     :param token: VSTS token

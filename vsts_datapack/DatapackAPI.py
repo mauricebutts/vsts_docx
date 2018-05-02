@@ -1,9 +1,10 @@
 """ Author: Maurice Butts
 Desc: This file acts as the API to the Datapack package. Use this to interface with the custom built commands.
 """
-
-import vsts_datapack.DatapackDocx.DatapackDocx as dd
-import vsts_datapack.DatapackVsts.DatapackVsts as dv
+from vsts_datapack.DatapackDocx.DatapackDocx import _create_docx_table_from_query
+from vsts_datapack.DatapackDocx.DatapackDocx import _add_datapack_hyperlink
+from vsts_datapack.DatapackVsts.DatapackVsts import _datapack_query
+from vsts_datapack.DatapackVsts.DatapackVsts import _datapack_item_count_query
 
 
 def datapack_vsts_query(token, team_instance, query_id):
@@ -17,7 +18,7 @@ def datapack_vsts_query(token, team_instance, query_id):
     :param query_id     : string    :  id of the query you'd like to use as found in the URL
     :return:              lists     : work_item_ids, returned_titles, returned_priority, returned_state, returned_tag
     """
-    return dv.datapack_query(token, team_instance, query_id)
+    return _datapack_query(token, team_instance, query_id)
 
 
 def datapack_vsts_item_count_query(token, team_instance, query_id, project):
@@ -29,7 +30,7 @@ def datapack_vsts_item_count_query(token, team_instance, query_id, project):
     :param project       : string       : name of the project ex. ('https://myteam.visualstudio.com/myprojectname/')
     :return:               int, string  : number of query items, url to query
     """
-    return dv.datapack_item_count_query(token, team_instance, query_id, project)
+    return _datapack_item_count_query(token, team_instance, query_id, project)
 
 
 def create_docx_table_from_query(document, list_of_column_names, list_of_data_lists):
@@ -42,7 +43,7 @@ def create_docx_table_from_query(document, list_of_column_names, list_of_data_li
     :param list_of_data_lists   : list of lists : N number of lists to be turned into columns and created into the DatapackDocx table
     :return:                      class         : DatapackDocx.document.add_table
     """
-    return dd.create_docx_table_from_query(document, list_of_column_names, list_of_data_lists)
+    return _create_docx_table_from_query(document, list_of_column_names, list_of_data_lists)
 
 
 def add_datapack_hyperlink(paragraph, url_text, query_id, team_instance, project):
@@ -55,4 +56,4 @@ def add_datapack_hyperlink(paragraph, url_text, query_id, team_instance, project
     :param project      : string    : Vsts project
     :return:  None
     """
-    return dd.add_datapack_hyperlink(paragraph, url_text, query_id, team_instance, project)
+    return _add_datapack_hyperlink(paragraph, url_text, query_id, team_instance, project)

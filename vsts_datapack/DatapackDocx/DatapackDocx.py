@@ -3,7 +3,7 @@ from docx.enum.dml import MSO_THEME_COLOR_INDEX
 import docx
 
 
-def create_docx_table_from_query(document, list_of_column_names, list_of_data_lists):
+def _create_docx_table_from_query(document, list_of_column_names, list_of_data_lists):
     """
     :param document             : class         : Document object to be acted on.
     :param list_of_column_names : list          : WorkItem Ids
@@ -70,7 +70,7 @@ def _add_hyperlink(paragraph, text, url):
     return hyperlink
 
 
-def add_datapack_hyperlink(paragraph, url_text, query_id, token, team_instance, project):
+def _add_datapack_hyperlink(paragraph, url_text, query_id, token, team_instance, project):
 
     query_count, url = av.datapack_item_count_query(token, team_instance, query_id, project)
     query_count = str(query_count)
