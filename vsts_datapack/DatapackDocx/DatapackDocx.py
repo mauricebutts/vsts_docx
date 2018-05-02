@@ -72,7 +72,7 @@ def _add_hyperlink(paragraph, text, url):
 
 def _add_datapack_hyperlink(paragraph, url_text, query_id, token, team_instance, project):
 
-    query_count, url = av.datapack_item_count_query(token, team_instance, query_id, project)
+    query_count, url = av._datapack_item_count_query(token, team_instance, query_id, project)
     query_count = str(query_count)
 
     text = query_count + ' ' + url_text

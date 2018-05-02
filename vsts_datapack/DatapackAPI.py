@@ -46,14 +46,16 @@ def create_docx_table_from_query(document, list_of_column_names, list_of_data_li
     return _create_docx_table_from_query(document, list_of_column_names, list_of_data_lists)
 
 
-def add_datapack_hyperlink(paragraph, url_text, query_id, team_instance, project):
+def add_datapack_hyperlink(paragraph, url_text, query_id, token, team_instance, project):
     """
 
     :param paragraph    : class     : Paragraph object to be acted on
     :param url_text     : string    : Hyperlinked string that trails the query count
     :param query_id     : string    : Vsts query id
+    :param token        : string    : Vsts auth token
     :param team_instance: string    : Vsts team instance
     :param project      : string    : Vsts project
     :return:  None
     """
-    return _add_datapack_hyperlink(paragraph, url_text, query_id, team_instance, project)
+    return _add_datapack_hyperlink(paragraph=paragraph, url_text=url_text, query_id=query_id,
+                                   token=token, team_instance=team_instance, project=project)
