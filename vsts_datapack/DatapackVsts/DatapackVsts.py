@@ -8,7 +8,7 @@ def _datapack_query(token, team_instance, query_id):
     credentials = BasicAuthentication('', token)
     connection = VssConnection(base_url=team_instance, creds=credentials)
 
-    core_client = connection.get_client('DatapackVsts.work_item_tracking.v4_1.work_item_tracking_client.WorkItemTrackingClient')
+    core_client = connection.get_client('vsts.work_item_tracking.v4_1.work_item_tracking_client.WorkItemTrackingClient')
 
     results2 = core_client.query_by_id(id=query_id,
                                         team_context=None,
@@ -79,7 +79,8 @@ def _datapack_item_count_query(token, team_instance, query_id, project):
     credentials = BasicAuthentication('', token)
     connection = VssConnection(base_url=team_instance, creds=credentials)
 
-    core_client = connection.get_client('DatapackVsts.work_item_tracking.v4_1.work_item_tracking_client.WorkItemTrackingClient')
+    core_client = connection.get_client('vsts.work_item_tracking.v4_1.work_item_tracking_client'
+                                        '.WorkItemTrackingClient')
 
     results = core_client.query_by_id(id=query_id,
                                         team_context=None,
