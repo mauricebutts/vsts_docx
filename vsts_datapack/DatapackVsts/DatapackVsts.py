@@ -63,7 +63,7 @@ def _datapack_query(token, team_instance, query_id):
         except KeyError:
             returned_tag.append('')
 
-    return work_item_ids, returned_titles, returned_priority, returned_state, returned_tag
+    return [work_item_ids, returned_titles, returned_priority, returned_state, returned_tag]
 
 
 def _datapack_item_count_query(token, team_instance, query_id, project):
