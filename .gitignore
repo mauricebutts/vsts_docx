@@ -2,6 +2,8 @@
 .idea/
 config.json
 vsts-python-samples/
+DocxTest.py
+Testdocx.docx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

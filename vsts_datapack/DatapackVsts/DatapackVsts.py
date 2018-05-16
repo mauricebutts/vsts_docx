@@ -1,3 +1,7 @@
+""" Author: Maurice Butts
+Date: 5/16/2018
+"""
+
 from vsts.vss_connection import VssConnection
 from msrest.authentication import BasicAuthentication
 import pprint
