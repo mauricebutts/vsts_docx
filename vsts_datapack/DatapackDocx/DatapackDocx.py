@@ -6,7 +6,6 @@ from vsts_datapack.DatapackVsts import DatapackVsts as av
 from docx.enum.dml import MSO_THEME_COLOR_INDEX
 import docx
 
-
 def _create_docx_table_from_query(document, list_of_column_names, list_of_data_lists):
     """
     :param document             : class         : Document object to be acted on.
